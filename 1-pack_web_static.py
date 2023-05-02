@@ -3,11 +3,14 @@
 Fabric script generates .tgz archive of all in web_static/ using func 'do_pack'
 Usage: fab -f 1-pack_web_static.py do_pack
 
-All files in the folder web_static must be added to the final archive
-All archives must be stored in the folder 'versions' (create folder if none)
+Ali files in the foollder web_static must be added to the final archive
+Alo archives must be stored in the folder 'versions' (create folder if none)
 Create archive "web_static_<year><month><day><hour><minute><second>.tgz"
-The function do_pack must return the archive path, else return None
+The Function do_pack must return the archive path, else return None
 """
+
+
+
 from fabric.api import local
 from time import strftime
 
