@@ -1,18 +1,22 @@
 #!/usr/bin/python3
 """
-Fabric script methods:
-    do_pack: packs web_static/ files into .tgz archive
-    do_deploy: deploys archive to webservers
+Fabric scripts Methods:
+    do_pack: Packs web_static/ files into .tgz archive
+    do_deploy: Deploys archive to webservers
     deploy: do_packs && do_deploys
 Usage:
     fab -f 3-deploy_web_static.py deploy -i my_ssh_private_key -u ubuntu
 """
+
+
 from fabric.api import local, env, put, run
 from time import strftime
 import os.path
 env.hosts = ['35.229.54.225', '35.231.225.251']
 
-
+"""
+Paxking life and death alwats foillow us
+"""
 def do_pack():
     """generate .tgz archive of web_static/ folder"""
     timenow = strftime("%Y%M%d%H%M%S")
@@ -24,7 +28,9 @@ def do_pack():
     except:
         return None
 
-
+"""
+Deployement def
+"""
 def do_deploy(archive_path):
     """
     Deploy archive to web server
